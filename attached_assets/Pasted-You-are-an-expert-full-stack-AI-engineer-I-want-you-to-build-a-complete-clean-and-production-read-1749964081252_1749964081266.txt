@@ -1,0 +1,74 @@
+You are an expert full-stack AI engineer. I want you to build a complete, clean, and production-ready full-stack application called **GovBuddy**.
+
+GovBuddy helps Indian citizens discover government schemes based on their profile details (like age, occupation, income, and state).
+
+---
+
+🔹 Tech Stack:
+
+Frontend:
+- React (with functional components and hooks)
+- Tailwind CSS for styling
+- React Router for navigation
+- Axios for API calls
+- Form validation using basic HTML5 or React Hook Form (optional)
+
+Backend:
+- Python with Flask
+- Flask CORS enabled for frontend-backend communication
+- REST API routes with clear separation (POST `/api/form`, GET `/api/schemes`, POST `/api/match`)
+- Serve a list of pre-defined government schemes stored in SQLite
+
+Database:
+- SQLite (lightweight file-based DB)
+- A table named `schemes` with fields: `id`, `name`, `description`, `eligibility`, `category`, `apply_link`
+- Optionally a `users` table (if extending with login)
+
+---
+
+🔹 Functional Requirements:
+
+1. **Homepage**
+   - Welcome text: “Discover government schemes that match your profile”
+   - Button: “Find My Schemes” → goes to form
+
+2. **Form Page**
+   - Fields: Name, Age, Gender, Income, Occupation, State, City
+   - On submit: Send to `/api/match` and show matched schemes
+
+3. **Results Page**
+   - Display matching schemes in card layout
+   - Show: Scheme Name, Description, Apply Link
+
+4. **About Page**
+   - Static content explaining what GovBuddy is
+
+5. **Contact Page**
+   - Contact form with Name, Email, and Message
+
+---
+
+🔹 Backend API Routes (Flask):
+- `POST /api/form`: Receives user data and stores in a temporary table (optional)
+- `POST /api/match`: Receives user profile and returns matched schemes based on eligibility rules (e.g. age < 25 → student schemes)
+- `GET /api/schemes`: Returns all schemes
+
+---
+
+🔹 Additional Expectations:
+- Modular folder structure (client/ for React, server/ for Flask)
+- Use Flask blueprints if needed for clean routing
+- Use Tailwind for clean UI (no inline styles)
+- Set up SQLite schema with dummy data (at least 5 schemes)
+- Use environment variables where needed
+- Include clear README and `requirements.txt`
+
+---
+
+Generate the project as a full working codebase. Include:
+- Frontend files (`App.jsx`, `Form.jsx`, `Results.jsx`, etc.)
+- Backend files (`app.py`, `routes.py`, `db.py`)
+- `schema.sql` or code to initialize the SQLite database
+- Sample scheme matching logic (e.g., based on age/income/state)
+
+Do not skip any files. All routes, pages, and DB setup must be included.
